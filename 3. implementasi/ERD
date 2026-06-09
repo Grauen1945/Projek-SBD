@@ -7,5 +7,5 @@ ADD CONSTRAINT FK_pendaftaran_kursus
 FOREIGN KEY (ID_Kursus) REFERENCES detail_kursus(ID_Kursus);
 
 ALTER TABLE hasil_studi 
-ADD CONSTRAINT FK_pendaftaran_hasil_studi
+ADD CONSTRAINT FK_hasil_studi_pendaftaran
 FOREIGN KEY (ID_Pendaftaran) REFERENCES pendaftaran(ID_Pendaftaran);
