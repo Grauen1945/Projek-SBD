@@ -1,0 +1,5 @@
+CREATE USER 'admin_kursus'@'localhost' IDENTIFIED BY 'admin123';
+CREATE USER 'data_analis'@'localhost' IDENTIFIED BY 'adalahpokoknya';
+
+GRANT ALL PRIVILEGES ON kursus_online.* TO 'admin_kursus'@'localhost';
+GRANT SELECT ON kursus_online.* TO 'data_analis'@'localhost';

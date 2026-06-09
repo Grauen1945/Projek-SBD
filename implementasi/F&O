@@ -1,0 +1,4 @@
+SELECT p.ID_Kursus, COUNT(p.ID_pendaftaran) AS Jumlah_Peserta
+FROM Pendaftaran p
+WHERE p.Status_Pendaftaran='Aktif' AND p.ID_Kursus IN('CRS001','CRS002')
+GROUP BY ID_kursus;

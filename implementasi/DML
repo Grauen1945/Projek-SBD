@@ -1,0 +1,7 @@
+UPDATE hasil_studi  
+SET  hasil_studi.Status_Kelulusan='Lulus'  
+WHERE hasil_studi.Nilai_Akhir >= 75 AND hasil_studi.Nilai_Akhir <= 100;  
+
+UPDATE hasil_studi 
+SET  hasil_studi.Status_Kelulusan='Tidak Lulus'  
+WHERE hasil_studi.Nilai_Akhir >=0 AND hasil_studi.Nilai_Akhir < 75;

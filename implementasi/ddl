@@ -1,0 +1,2 @@
+ALTER TABLE hasil_studi ADD COLUMN Status_Kelulusan ENUM('Lulus', 'Tidak Lulus');
+

@@ -39,4 +39,14 @@ CREATE TABLE hasil_studi (
     Nilai_Akhir DECIMAL(5,2)
 );
 
+ALTER TABLE pendaftaran 
+ADD CONSTRAINT FK_pendaftaran_pengguna
+FOREIGN KEY (ID_Pengguna) REFERENCES pengguna(ID_Pengguna);
 
+ALTER TABLE pendaftaran 
+ADD CONSTRAINT FK_pendaftaran_kursus
+FOREIGN KEY (ID_Kursus) REFERENCES detail_kursus(ID_Kursus);
+
+ALTER TABLE hasil_studi 
+ADD CONSTRAINT FK_hasil_studi_pendaftaran
+FOREIGN KEY (ID_Pendaftaran) REFERENCES pendaftaran(ID_Pendaftaran);

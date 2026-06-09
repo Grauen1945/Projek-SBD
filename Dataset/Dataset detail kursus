@@ -1,0 +1,7 @@
+INSERT INTO detail_kursus (ID_Kursus, Nama_Kursus, Harga_Kursus, Durasi)
+VALUES
+('CRS001', 'AI Engineering', 3500000, '12 Minggu'),
+('CRS002', 'Data Engineering', 3900000, '14 Minggu'),
+('CRS003', 'Data Science', 3200000, '10 Minggu'),
+('CRS004', 'Software Development', 4000000, '16 Minggu'),
+('CRS005', 'Cybersecurity', 3600000, '8 Minggu');
