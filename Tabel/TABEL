@@ -1,0 +1,42 @@
+CREATE DATABASE kursus_online;
+
+
+CREATE TABLE pengguna (
+    ID_Pengguna VARCHAR(10) PRIMARY KEY, 
+    Email VARCHAR(100) NOT NULL UNIQUE, 
+    Nama VARCHAR(100) NOT NULL, 
+    Jenis_Kelamin ENUM('Laki-laki','Perempuan') NOT NULL, 
+    Tanggal_Lahir DATE NOT NULL,
+    Asal_Provinsi VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE detail_kursus (
+    ID_Kursus VARCHAR(10) PRIMARY KEY, 
+    Nama_Kursus VARCHAR(50) NOT NULL,
+    Harga_Kursus INT UNSIGNED NOT NULL,
+    Durasi VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE pendaftaran (
+  ID_Pendaftaran VARCHAR(10) PRIMARY KEY,
+  ID_Pengguna VARCHAR(10) NOT NULL,
+  ID_Kursus VARCHAR(10) NOT NULL,
+  Tanggal_Daftar date NOT NULL,
+  Status_Pendaftaran ENUM('Selesai','Dibatalkan') NOT NULL,
+  Status_Pembayaran ENUM('Berhasil','Gagal') NOT NULL
+);
+
+CREATE TABLE hasil_studi (
+    ID_Hasil VARCHAR(10) PRIMARY KEY,
+    ID_Pendaftaran VARCHAR(10) UNIQUE,
+    CPM1 DECIMAL(5,2),
+    CPM2  DECIMAL(5,2),
+    CPM3  DECIMAL(5,2),
+    CPM4  DECIMAL(5,2),
+    CPM5  DECIMAL(5,2),
+    FINAL_PROJECT  DECIMAL(5,2),
+    Nilai_Akhir DECIMAL(5,2)
+);
+
+
