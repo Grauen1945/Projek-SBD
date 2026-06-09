@@ -1,18 +1,5 @@
-SELECT 
-    pg.Nama,
-    pd.ID_Kursus,
-    hs.Nilai_Akhir,
-    avgc.AVG_Course,
-    CASE
-      WHEN hs.Nilai_Akhir>avgc.AVG_Course THEN 'Diatas Rata Rata'
-      WHEN hs.Nilai_Akhir<avgc.AVG_Course THEN 'Dibawah Rata Rata'
-     ELSE 'Rata Rata'
-    END AS Kategori_Nilai_Berdasarkan_Rata_Rata_Kursus
-FROM hasil_studi hs
-JOIN pendaftaran pd ON hs.ID_Pendaftaran = pd.ID_Pendaftaran
-JOIN pengguna pg ON pd.ID_Pengguna=pg.ID_Pengguna
-JOIN (SELECT pd.ID_Kursus, AVG(hs.Nilai_Akhir) AS AVG_Course
-           FROM hasil_studi hs
-           JOIN pendaftaran pd ON hs.ID_Pendaftaran = pd.ID_Pendaftaran
-           GROUP BY pd.ID_Kursus
-) AS avgc ON avgc.ID_Kursus = pd.ID_Kursus;
+SELECT *, 
+CASE WHEN (CPM1 < CPM2 AND CPM2 < CPM3 AND CPM3 < CPM4 AND CPM4 < CPM5 AND CPM5 < FINAL_PROJECT) THEN 'Konsisten Naik' 
+    WHEN (CPM1 > CPM2 AND CPM2 > CPM3 AND CPM3 > CPM4 AND CPM4 > CPM5 AND CPM5 > FINAL_PROJECT) THEN 'Konsisten Turun'
+    ELSE 'Fluktuatif' 
+END AS Kategori_Nilai FROM hasil_studiLIMIT 40 OFFSET 60;
