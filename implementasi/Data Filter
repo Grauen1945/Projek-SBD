@@ -1,3 +1,0 @@
-SELECT * FROM hasil_studi
-ORDER BY Nilai_Akhir DESC 
-LIMIT 10;
