@@ -1,7 +1,7 @@
 SELECT p.Nama,
        p.Asal_Provinsi,
-       d.ID_Pendaftaran
+       d.ID_Pendaftaran,
+       d.Status_Pendaftaran
 FROM pengguna p
 INNER JOIN pendaftaran d ON p.ID_Pengguna = d.ID_Pengguna
-WHERE Status_Pendaftaran=’Selesai’
-WHERE p.Asal_Provinsi = 'Jawa Barat';
+WHERE Status_Pendaftaran=’Selesai’ AND p.Asal_Provinsi = 'Jawa Barat';
